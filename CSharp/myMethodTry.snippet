@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>My New Method With Try</Title>
+      <Shortcut>methodtry</Shortcut>
+      <Description>Code snippet for a new method</Description>
+      <Author>Microsoft Corporation</Author>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal>
+          <ID>name</ID>
+          <ToolTip>Init new method with try catch</ToolTip>
+          <Default>MyNewMethod</Default>
+        </Literal>
+          <Literal Editable="false">	
+            <ID>MyNewMethod</ID>
+          </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[
+      public void $name$()
+      {
+	        var methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+            LoggerHelper.Log.Debug($$"{methodName} - Started");			
+						
+			try
+            {
+            
+            }
+            catch (Exception ex)
+            {
+                LoggerHelper.Log.Error(ex, $$"{methodName} - Failed : [complement]");
+            }
+							
+			LoggerHelper.Log.Debug($$"{methodName} - Finished");          $end$
+      }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
